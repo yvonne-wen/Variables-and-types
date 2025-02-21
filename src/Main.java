@@ -6,7 +6,11 @@ public class Main{
 
         System.out.println("Now playing the song");
         mbox.playSong(mbox.getSongID(), mbox.getPremiumSong(), 2);
+
+        MusicBox anotherMusicBox = new MusicBox("NewSongID", 'N', "New Song Title", "New Artist", "New Album", "Pop", "New Producer", "New Label",0);
+        System.out.println("Now playing another song");
         
+anotherMusicBox.playSong(anotherMusicBox.getSongID(),anotherMusicBox.getPremiumSong(), 1);
         // --- TODO
 
         /* Repeat the above code to create another object  
