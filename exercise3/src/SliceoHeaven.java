@@ -9,8 +9,37 @@ public class SliceoHeaven{
     Double pizzaPrice;
     String sides;
     String drinks;
-    String orderID;
-    Double orderTotal;
+    private String orderID;
+    private Double orderTotal;
+    private final String DEF_ORDER_ID = "DEF-SOH-099";
+    private final String  DEF_PIZZA_INGERDIENTS = "Mozzarella Cheese";
+    private final Double DEF_ORDER_TOTAL = 15.00;
+    
+    public SliceoHeaven(){
+        this.orderID = DEF_ORDER_ID;
+        this.pizzaIngredients = DEF_PIZZA_INGERDIENTS;
+        this.orderTotal = DEF_ORDER_TOTAL;
+        this.sides = "";
+        this.drinks = "";
+    }
+
+    public SliceoHeaven(String orderID,String pizzaIngredients,Double oederTotal){
+        this.orderID = orderID;
+        this.pizzaIngredients = pizzaIngredients;
+        this.orderTotal = orderTotal;
+    }
+
+    public String getOrderID(){
+        return orderID;
+    }
+
+    public Double  getOrderTotal(){
+        return orderTotal;
+    }
+
+    public void setOrderTotal(Double orderTotal){
+        this.orderTotal = orderTotal;
+    }
 
     public void takeOrder(String orderID,String items,double total) {
         this.orderID = orderID;
@@ -23,10 +52,10 @@ public class SliceoHeaven{
         System.out.println("make Pizza");
     }
 
-    public void printReceipt(){
+    private void printReceipt(){
         System.out.println("the receipt");
-        System.out.println("orderID:");
-        System.out.println("oederTotal:");
+        System.out.println("orderID:" + getOrderID());
+        System.out.println("oederTotal:" + getOrderTotal());
     }
     public static void main(String[] args) throws Exception {
         SliceoHeaven pizzaStore = new SliceoHeaven();
